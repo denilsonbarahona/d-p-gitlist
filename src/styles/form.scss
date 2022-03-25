@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  font: var(--body2-regular);
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  &--isLogin {
+    @extend .form;
+    border: 1px solid rgba(139, 148, 158, 0.1);
+    background-color: var(--muted-bg);
+  }
+}

@@ -1,0 +1,15 @@
+.input {
+  font: var(--body2-regular);
+  padding-inline: 1rem;
+  color: var(--white);
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid var(--grey);
+  background-color: var(--bg);
+  block-size: 2.2rem;
+  box-sizing: border-box;
+  &:focus {
+    box-shadow: 1px 1px 3px var(--primary);
+    border-color: var(--primary);
+  }
+}

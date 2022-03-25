@@ -1,0 +1,29 @@
+.button {
+  display: inline-block;
+  inline-size: 100%;
+  block-size: 2.2rem;
+  border: 1px solid transparent;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font: var(--button);
+  color: var(--white);
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &--isGreen {
+    @extend .button;
+    background-color: var(--green);
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+
+  &--isBase {
+    background-color: transparent;
+    border: 1px solid var(--grey);
+  }
+}
