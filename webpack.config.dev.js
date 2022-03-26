@@ -16,7 +16,7 @@ module.exports = {
             '@shared': path.resolve(__dirname, 'src/shared'),
         }
     },
-    mode: 'development',
+    mode: 'development', 
     module: {
         rules: [
             {
@@ -54,6 +54,7 @@ module.exports = {
     ],
     devServer:{
         compress: true,
+        historyApiFallback: true,
         port:3006
     }
 }

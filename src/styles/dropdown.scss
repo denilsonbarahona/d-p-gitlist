@@ -1,0 +1,85 @@
+.dropdown {
+  position: relative;
+  inline-size: fit-content;
+  outline: none;
+
+  &-title {
+    border: 1px solid transparent;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    inline-size: fit-content;
+    block-size: fit-content;
+    justify-content: center;
+    display: flex;
+    gap: 0.5rem;
+    outline: none;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--button-bg);
+    font: var(--body2-semi-bold);
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &:hover {
+      border: 1px solid var(--grey);
+      background-color: #4f545a;
+    }
+
+    &:focus {
+      border-color: var(--grey);
+      filter: drop-shadow(1px 1px 3px var(--grey));
+    }
+  }
+
+  &-panel {
+    border: 1px solid var(--grey-2);
+    position: absolute;
+    background-color: #212730;
+    inline-size: 16.25rem;
+    border-radius: 0.5rem;
+    margin-block-start: 0.5rem;
+    color: var(--grey-2);
+    overflow: hidden;
+
+    &--isHidden {
+      display: none;
+    }
+
+    &--isVisible {
+      display: inline-block;
+    }
+  }
+
+  &-header {
+    font: var(--body2-semi-bold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+
+    i {
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+  }
+
+  &-item {
+    padding-block: 0.5rem;
+    padding-inline: 2.5rem;
+    font: var(--body2-regular);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+      background-color: #4f545a;
+    }
+
+    i {
+      position: absolute;
+      inset-inline-start: 1rem;
+    }
+  }
+}
