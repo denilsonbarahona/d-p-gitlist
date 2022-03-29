@@ -1,0 +1,33 @@
+@mixin Labeled($radius, $padding, $font) {
+  border-radius: $radius;
+  padding: $padding;
+  font: $font;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--grey-2);
+  font: var(--body2-regular);
+  inline-size: fit-content;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &--isRounded {
+    @include Labeled(2rem, 0 0.5rem, var(--caption-regular));
+    border: 1px solid var(--grey);
+  }
+
+  &--isTag {
+    @include Labeled(2rem, 0.25rem 0.75rem, var(--caption-medium));
+    background-color: #15223a;
+    color: var(--primary);
+  }
+
+  &--isCaption {
+    font: var(--caption-regular);
+  }
+}

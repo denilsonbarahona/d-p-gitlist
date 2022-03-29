@@ -1,0 +1,29 @@
+.description {
+  display: grid;
+  gap: 1rem;
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__title {
+    color: var(--primary);
+    font: var(--headline2-semi-bold);
+    margin: 0;
+  }
+
+  &__tags {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  &__info {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,69 @@
+.profile {
+  display: grid;
+  grid-template-areas: "header" "descriptions" "actions";
+  gap: 1.5rem;
+  margin-block-end: 3rem;
+
+  &-header {
+    grid-area: header;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-image {
+    inline-size: 5rem;
+    block-size: 5rem;
+    border: 1px solid var(--grey-2);
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  &-name {
+    margin: 0;
+    color: var(--white);
+    font: var(--headline1);
+  }
+
+  &-id {
+    margin: 0;
+    color: var(--grey-2);
+    font: var(--headline2-light);
+  }
+
+  &-actions {
+    grid-area: actions;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &-follow {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &-description {
+    grid-area: descriptions;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and(min-width: 1024px) {
+  .profile {
+    grid-template-areas: "header" "actions" "descriptions";
+    &-header {
+      justify-content: center;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    &-image {
+      inline-size: 17.375rem;
+      block-size: 17.375rem;
+    }
+  }
+}

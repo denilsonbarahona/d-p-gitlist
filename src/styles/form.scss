@@ -3,11 +3,12 @@
   flex-direction: column;
   color: var(--white);
   font: var(--body2-regular);
-  padding: 1rem;
+  padding-block: 1rem;
   border-radius: 0.5rem;
-
+  flex: 1;
   &--isLogin {
     @extend .form;
+    padding-inline: 1rem;
     border: 1px solid rgba(139, 148, 158, 0.1);
     background-color: var(--muted-bg);
   }

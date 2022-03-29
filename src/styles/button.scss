@@ -26,4 +26,12 @@
     background-color: transparent;
     border: 1px solid var(--grey);
   }
+
+  &--isIconic {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    inline-size: fit-content;
+    padding-inline: 0.5rem;
+  }
 }

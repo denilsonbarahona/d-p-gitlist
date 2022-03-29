@@ -1,11 +1,18 @@
 import React from "react";
-import Dropdown from "@shared/components/dropdown";
+import Filter from "../components/profile-filter";
+import ProfileLayout from "../layout/profile-layout";
+import ProjectItem from "../components/project-item";
+import ProfileHeader from "./profile-header";
 
 const Profile = () => {
   return (
-    <div>
-      <Dropdown />
-    </div>
+    <ProfileLayout>
+      <ProfileHeader />
+      <div>
+        <Filter />
+        <ProjectItem />
+      </div>
+    </ProfileLayout>
   );
 };
 
