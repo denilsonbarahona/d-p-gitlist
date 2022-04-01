@@ -19,14 +19,12 @@ const Login = () => {
         <div className="login-poster">
           <i className="login-icon icon-github" />
         </div>
-        <h1 className="login-header">Sign in to GitHub</h1>
+        <h1 className="login-header">Search a GitHub repository</h1>
         <Form className="form form--isLogin">
-          <label htmlFor="email_username">Username or email address</label>
+          <label htmlFor="email_username">Username</label>
           <Input name="email_username" id="email_username" type="text" />
-          <label htmlFor="password">Password</label>
-          <Input name="password" id="password" type="password" />
-          <Button title="click to login" className="button button--isGreen">
-            Sign in
+          <Button title="click to search" className="button button--isGreen">
+            Search
           </Button>
         </Form>
         <div className="login-create">

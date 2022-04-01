@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "@styles/dropdown.scss";
-import {ToggleVisibility}  from '../utils/dropdown-utils'
+import { ToggleVisibility } from "../utils/dropdown-utils";
 
 const Dropdown = ({ items }) => {
+  const [state, setState] = useState(items[0]);
 
-  const OpenPanel =(event)=> {
-    ToggleVisibility(event.currentTarget)
-  }
+  const OpenPanel = (event) => {
+    ToggleVisibility(
+      event.currentTarget.parentNode.querySelector(".dropdown-panel")
+    );
+  };
 
   const ClosePanel = (event) => {
-    console.log(event.target.parentNode.parentNode)
-  }
+    ToggleVisibility(event.target.closest(".dropdown-panel"));
+  };
+
+  const SelectItem = (event) => {
+    setState(event.target.innerText);
+  };
 
   return (
     <div role="listbox" aria-label="select an option" className="dropdown">
-      <div tabIndex="0" onClick={OpenPanel} className="dropdown-title">
+      <div
+        tabIndex="0"
+        onKeyUp={(e) => e.code === "Enter" && OpenPanel(e)}
+        onClick={OpenPanel}
+        className="dropdown-title"
+      >
         <span>dropdown</span>
         <i aria-hidden="true" className="icon-circle-down"></i>
       </div>
@@ -26,6 +38,7 @@ const Dropdown = ({ items }) => {
             role="button"
             aria-label="click to close to panel"
             className="icon-cross"
+            onKeyUp={(e) => e.code === "Enter" && ClosePanel()}
             onClick={ClosePanel}
           />
         </div>
@@ -36,10 +49,15 @@ const Dropdown = ({ items }) => {
               id="all"
               tabIndex="0"
               role="option"
-              /*   aria-selected="true" */
-              className="dropdown-item"
+              onClick={SelectItem}
+              onKeyUp={(e) => e.code === "Enter" && SelectItem(e)}
+              className={`dropdown-item ${
+                item === state
+                  ? "dropdown-item--Selected"
+                  : "dropdown-item--UnSelected"
+              }`}
             >
-              {/*  <i className="icon-checkmark" /> */}
+              <i className="icon-checkmark" />
               {item}
             </div>
           ))}

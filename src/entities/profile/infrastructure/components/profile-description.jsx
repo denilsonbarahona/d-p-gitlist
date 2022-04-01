@@ -11,7 +11,7 @@ const ProfileDescription = () => {
           <span>3</span> Followers
         </Label>
         <Label className="label">
-          <span>8</span> Following
+          -<span>8</span> Following
         </Label>
       </div>
       <Label className="label">
