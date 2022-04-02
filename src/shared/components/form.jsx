@@ -1,12 +1,12 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "@styles/form.scss";
 
-const Form = ({ children, className, role }) => {
+const Form = forwardRef(({ children, className, role, onSubmit }, ref) => {
   return (
-    <form role={role} className={className}>
+    <form ref={ref} onSubmit={onSubmit} role={role} className={className}>
       {children}{" "}
     </form>
   );
-};
+});
 
 export default Form;

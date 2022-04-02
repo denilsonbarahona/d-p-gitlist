@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { searchUser } from "../../core/actions";
 import Button from "@shared/components/button";
 import Form from "@shared/components/form";
 import Input from "@shared/components/input";
@@ -6,6 +9,26 @@ import LoginLayout from "../layouts/login-layout";
 import Helmet from "react-helmet";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const usr = useSelector((state) => state.LoginReducer);
+  const ref = useRef();
+  const {
+    goToHome,
+    user: { login },
+  } = usr;
+
+  useEffect(() => {
+    if (goToHome) navigate(`/${login}`);
+  }, [goToHome]);
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(ref.current);
+    const userName = formData.get("username");
+    dispatch(searchUser(userName));
+  };
+
   return (
     <LoginLayout>
       <Helmet>
@@ -20,9 +43,9 @@ const Login = () => {
           <i className="login-icon icon-github" />
         </div>
         <h1 className="login-header">Search a GitHub repository</h1>
-        <Form className="form form--isLogin">
-          <label htmlFor="email_username">Username</label>
-          <Input name="email_username" id="email_username" type="text" />
+        <Form ref={ref} onSubmit={onSubmit} className="form form--isLogin">
+          <label htmlFor="username">Username</label>
+          <Input name="username" id="username" type="text" />
           <Button title="click to search" className="button button--isGreen">
             Search
           </Button>

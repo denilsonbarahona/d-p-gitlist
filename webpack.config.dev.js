@@ -1,7 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
-
+const dotEnv = require('dotenv-webpack')
 
 module.exports = {
     entry: './src/index.js',
@@ -50,7 +50,8 @@ module.exports = {
         }),
         new MiniCSSExtractPlugin({
             filename: '[name].css'
-        })
+        }),
+        new dotEnv()
     ],
     devServer:{
         compress: true,
