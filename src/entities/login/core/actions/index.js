@@ -1,4 +1,3 @@
-import { setSessionStorage } from "../utils";
 import { SAVE_SESSION } from "../types";
 
 const saveSession = (payload) => ({ type: SAVE_SESSION, payload });
@@ -8,7 +7,6 @@ export const searchUser =
     const { services } = extraArgument;
     const response = await services.searchUser(username);
     if (response.error === false) {
-      setSessionStorage(response);
       dispatch(saveSession(response));
     }
   };

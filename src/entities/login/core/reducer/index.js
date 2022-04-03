@@ -1,8 +1,11 @@
 import { SAVE_SESSION } from "../types";
+import { getSessionStorage } from "@shared/utils/sessionStorage";
+
+const session = JSON.parse(getSessionStorage("login"));
 
 const initialState = {
-  user: {},
-  goToHome: false,
+  user: { ...session },
+  goToHome: session ? true : false,
 };
 
 const LoginReducer = (state = initialState, actions) => {

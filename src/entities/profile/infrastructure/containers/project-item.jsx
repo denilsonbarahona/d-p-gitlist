@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectItemDescription from "./project-item-description";
-import ProjectItemActions from "./project-item-actions";
+import ProjectItemDescription from "../components/project-item-description";
+import ProjectItemActions from "../components/project-item-actions";
 import "../styles/project-item.scss";
 
 const ProjectItem = () => {
