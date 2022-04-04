@@ -5,9 +5,12 @@ import "../styles/project-actions.scss";
 const ProjectItemActions = () => {
   return (
     <div className="actions">
-      <Button className="button button--isBase button--isIconic">
+      <Button
+        title="star this repository"
+        className="button button--isBase button--isIconic"
+      >
         <i className="icon-star-full" />
-        Start
+        Star
       </Button>
       <svg width="190" height="25" xmlns="http://www.w3.org/2000/svg">
         <defs>

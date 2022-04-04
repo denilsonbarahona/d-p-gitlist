@@ -16,9 +16,15 @@ const Filter = () => {
         />
       </Form>
       <div className="filter__actions">
-        <Dropdown items={["All", "Sources", "Forks", "Archived", "Mirrors"]} />
-        <Dropdown items={["All", "Sources", "Forks", "Archived", "Mirrors"]} />
-        <Dropdown items={["All", "Sources", "Forks", "Archived", "Mirrors"]} />
+        <Dropdown
+          label="Type"
+          items={["All", "Sources", "Forks", "Archived", "Mirrors"]}
+        />
+        <Dropdown
+          label="Language"
+          items={["All", "CSS", "JavaScript", "HTML"]}
+        />
+        <Dropdown label="Sort" items={["Last updated", "Name", "Stars"]} />
       </div>
     </div>
   );
