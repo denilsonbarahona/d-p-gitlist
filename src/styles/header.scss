@@ -1,0 +1,71 @@
+.header {
+  padding-block: 1rem;
+  padding-inline: 1.5rem;
+  background-color: var(--muted-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &__icon {
+    i {
+      font-size: 2rem;
+      color: var(--white);
+      margin: 0;
+      vertical-align: middle;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  &__figure {
+    inline-size: fit-content;
+    block-size: fit-content;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__image {
+    cursor: pointer;
+    display: block;
+    border-radius: 50%;
+    background-color: red;
+    inline-size: 1.875rem;
+    block-size: 1.875rem;
+  }
+
+  &__panel {
+    position: absolute;
+    background-color: var(--muted-bg);
+    border: 1px solid var(--grey);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    inset-block-start: 80%;
+    inset-inline-end: 40px;
+    box-shadow: 3px 3px 10px var(--black);
+    transition: opacity, block-size ease-in-out 0.1s;
+
+    &--isVisible {
+      opacity: 1;
+      z-index: 1;
+      block-size: fit-content;
+    }
+
+    &--isHidden {
+      opacity: 0;
+      z-index: -1;
+      block-size: 0;
+    }
+
+    &__user {
+      border-block-end: 1px solid var(--grey-2);
+      padding-block-end: 0.5rem;
+    }
+
+    &__button {
+      margin-block-start: 0.5rem;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "@styles/dropdown.scss";
 import { ToggleVisibility } from "../utils/dropdown-utils";
 
-const Dropdown = ({ items, label }) => {
+const Dropdown = ({ items, label, onSelected }) => {
   const [state, setState] = useState(items[0]);
 
   const OpenPanel = (event) => {
@@ -17,6 +17,7 @@ const Dropdown = ({ items, label }) => {
 
   const SelectItem = (event) => {
     setState(event.target.innerText);
+    onSelected(event);
   };
 
   return (
@@ -46,7 +47,7 @@ const Dropdown = ({ items, label }) => {
           {items.map((item) => (
             <div
               key={item}
-              id="all"
+              id={item}
               tabIndex="0"
               role="option"
               onClick={SelectItem}

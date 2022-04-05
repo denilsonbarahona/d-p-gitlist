@@ -1,7 +1,7 @@
-import { SAVE_SESSION } from "../types";
+import { SAVE_SESSION, SIGN_OUT } from "../types";
 import { getSessionStorage } from "@shared/utils/sessionStorage";
 
-const session = JSON.parse(getSessionStorage("login"));
+const session = getSessionStorage("login");
 
 const initialState = {
   user: { ...session },
@@ -12,6 +12,8 @@ const LoginReducer = (state = initialState, actions) => {
   switch (actions.type) {
     case SAVE_SESSION:
       return { ...state, user: { ...actions.payload }, goToHome: true };
+    case SIGN_OUT:
+      return { user: {}, goToHome: false };
     default:
       return state;
   }

@@ -1,8 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
 import { searchUser } from "../../core/actions";
-import useSessionStorage from "@shared/customHooks/useSessionStorage";
 import Button from "@shared/components/button";
 import Form from "@shared/components/form";
 import Input from "@shared/components/input";
@@ -11,18 +9,7 @@ import Helmet from "react-helmet";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { saveSessionStorage } = useSessionStorage();
-  const usr = useSelector((state) => state.LoginReducer);
   const ref = useRef();
-  const { goToHome, user } = usr;
-
-  useEffect(() => {
-    if (goToHome) {
-      saveSessionStorage("login", user);
-      navigate(`/${user.login}`);
-    }
-  }, [goToHome]);
 
   const onSubmit = (event) => {
     event.preventDefault();
