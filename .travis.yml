@@ -12,5 +12,4 @@ script:
 deploy:
   provider: firebase
   token:
-    secure: $firebaseToken
-  project: git-list
+    secure: $FIREBASE_TOKEN
