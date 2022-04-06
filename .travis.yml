@@ -11,10 +11,7 @@ script:
   - yarn build
 deploy:
   provider: firebase
+  edge: true
   skip_cleanup: true
-  on:
-    branches:
-      only:
-        - main
   token:
     secure: $FIREBASE_TOKEN
