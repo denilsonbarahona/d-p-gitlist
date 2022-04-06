@@ -6,8 +6,6 @@ node_js:
   - 17
 git:
   depth: 3
-before-script:
-  - yarn install firebase-tool -g
 script:
   - yarn test
   - yarn build
