@@ -6,14 +6,9 @@ node_js:
   - 17
 git:
   depth: 3
+before_script:
+  - npm install firebase-tools -g
 script:
   - yarn test
   - yarn build
-deploy:
-  provider: firebase
-  on:
-    branch: main
-  edge: true
-  skip_cleanup: true
-  token:
-    secure: $FIREBASE_TOKEN
+  - firebase deploy --only hosting --token $FIREBASE_TOKEN
