@@ -6,11 +6,12 @@ node_js:
   - 17
 git:
   depth: 3
+before-script:
+  - yarn install firebase-tool -g
 script:
   - yarn test
   - yarn build
 deploy:
   provider: firebase
   token:
-    secure: $firebaseToken
-  project: git-list
+    secure: $FIREBASE_TOKEN
