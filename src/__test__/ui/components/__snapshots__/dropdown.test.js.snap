@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dropdown create snapshot 1`] = `
+<div
+  aria-label="select an option"
+  className="dropdown"
+  role="listbox"
+>
+  <div
+    className="dropdown-title"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+    tabIndex="0"
+  >
+    <span />
+    <i
+      aria-hidden="true"
+      className="icon-circle-down"
+    />
+  </div>
+  <div
+    className="dropdown-panel dropdown-panel--isHidden"
+  >
+    <div
+      className="dropdown-header"
+    >
+      <p>
+        Select 
+      </p>
+      <i
+        aria-label="click to close to panel"
+        className="icon-cross"
+        onClick={[Function]}
+        onKeyUp={[Function]}
+        role="button"
+        tabIndex="0"
+      />
+    </div>
+    <div>
+      <div
+        className="dropdown-item dropdown-item--Selected"
+        id="option1"
+        onClick={[Function]}
+        onKeyUp={[Function]}
+        role="option"
+        tabIndex="0"
+      >
+        <i
+          className="icon-checkmark"
+        />
+        option1
+      </div>
+      <div
+        className="dropdown-item dropdown-item--UnSelected"
+        id="option2"
+        onClick={[Function]}
+        onKeyUp={[Function]}
+        role="option"
+        tabIndex="0"
+      >
+        <i
+          className="icon-checkmark"
+        />
+        option2
+      </div>
+    </div>
+  </div>
+</div>
+`;

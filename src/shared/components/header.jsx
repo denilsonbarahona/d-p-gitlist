@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteSession } from "../../entities/login/core/actions";
-import Label from "@shared/components/label";
 import Button from "@shared/components/button";
+import Label from "@shared/components/label";
 import "@styles/header.scss";
 
 const Header = () => {
