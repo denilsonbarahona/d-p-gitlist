@@ -1,30 +1,46 @@
 import React from "react";
 import Label from "@shared/components/label";
 import Paragraph from "@shared/components/paragraph";
+import { getTimeFormat } from "@shared/utils/dates";
 import "../styles/project-description.scss";
 
-const ProjectItemDescription = () => {
+const ProjectItemDescription = ({
+  name,
+  visibility,
+  description,
+  topics,
+  language,
+  stargazers_count,
+  forks_count,
+  pushed_at,
+}) => {
+  const Updated = new Date(pushed_at);
+  const Now = new Date();
+  const UpdatedString = `Updated ${getTimeFormat(Now, Updated)}`;
+
   return (
     <div className="description">
       <div className="description__header">
-        <h3 className="description__title">rock-paper-scissors-react</h3>
-        <Label className="label label--isRounded">public</Label>
+        <h3 className="description__title">{name}</h3>
+        <Label className="label label--isRounded">{visibility}</Label>
       </div>
-      <Paragraph>Challenge #5 from Frontend Mentor</Paragraph>
+      <Paragraph>{description}</Paragraph>
       <div className="description__tags">
-        <Label className="label label--isTag">javascript</Label>
-        <Label className="label label--isTag">css</Label>
-        <Label className="label label--isTag">html</Label>
+        {topics.map((item) => (
+          <Label key={item} className="label label--isTag">
+            {item}
+          </Label>
+        ))}
       </div>
       <div className="description__info">
-        <Label className="label label--isCaption">JavaScript</Label>
+        <Label className="label label--isCaption">{language}</Label>
         <Label className="label label--isCaption">
-          <i className="icon-star-full" /> 338
+          <i className="icon-star-full" /> {stargazers_count}
         </Label>
         <Label className="label label--isCaption">
-          <i className="icon-tree" /> 19
+          <i className="icon-tree" /> {forks_count}
         </Label>
-        <Label className="label label--isCaption">updated 3 weeks ago</Label>
+        <Label className="label label--isCaption">{UpdatedString}</Label>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 {
-  "name": "gitlist",
+  "name": "git-list",
   "version": "1.0.0",
   "description": "React, Redux, JS, Jest",
   "main": "index.js",
@@ -8,7 +8,9 @@
     "start": "webpack serve --config webpack.config.dev.js",
     "lint": "eslint src/ --fix",
     "format": "prettier --write \"src/\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "react",
@@ -24,11 +26,13 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
     "dotenv-webpack": "^7.1.0",
+    "enzyme": "^3.11.0",
     "eslint": "^8.11.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -38,6 +42,8 @@
     "eslint-plugin-react": "^7.29.4",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
+    "jest-fetch-mock": "^3.0.3",
     "mini-css-extract-plugin": "^2.6.0",
     "prettier": "^2.6.0",
     "sass": "^1.49.9",
@@ -49,6 +55,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "firebase": "^9.6.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
@@ -56,5 +63,16 @@
     "react-router-dom": "^6.2.2",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__test__/setupTest.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(styl|css|scss|sass)$": "<rootDir>/src/__mocks__/styleMock.js",
+      "@shared/(.*)": "src/shared/$1"
+    },
+    "testEnvironment": "jsdom"
   }
 }

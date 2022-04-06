@@ -1,8 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin');
 const dotEnv = require('dotenv-webpack')
-const cleanWebpackPlugin = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports ={
     entry: './src/index.js',
@@ -18,7 +19,7 @@ module.exports ={
             '@shared': path.resolve(__dirname, 'src/shared'),
         }
     },
-    module: 'production',
+    mode: 'production',
     module: {
         rules: [
             {
@@ -53,7 +54,7 @@ module.exports ={
         new MiniCSSExtractPlugin({
             filename: '[name].css'
         }),
-        new cleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         new dotEnv()
     ],
     optimization: {

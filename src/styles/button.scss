@@ -34,4 +34,29 @@
     inline-size: fit-content;
     padding-inline: 0.5rem;
   }
+
+  &--isPagination {
+    inline-size: fit-content;
+    padding-inline: 1rem;
+    color: var(--primary);
+    background-color: #21262d;
+
+    &[disabled] {
+      filter: brightness(0.8);
+    }
+
+    &:active {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    &:nth-child(1) {
+      border-end-end-radius: unset;
+      border-start-end-radius: unset;
+    }
+    &:nth-child(2) {
+      border-end-start-radius: unset;
+      border-start-start-radius: unset;
+    }
+  }
 }

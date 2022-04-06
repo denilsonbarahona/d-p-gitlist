@@ -1,30 +1,36 @@
 import React from "react";
 import Label from "@shared/components/label";
+import Paragraph from "@shared/components/paragraph";
+import { useSelector } from "react-redux";
 
 const ProfileDescription = () => {
+  const {
+    user: { bio, followers, following, location, blog, twitter_username },
+  } = useSelector((state) => state.LoginReducer);
+
   return (
     <div className="profile-description">
-      <Label className="label">Software Engineer, Professor</Label>
+      <Paragraph className="label">{bio}</Paragraph>
       <div className="profile-follow">
         <Label className="label">
           <i className="icon-users" />
-          <span>3</span> Followers
+          <span>{followers}</span> Followers
         </Label>
         <Label className="label">
-          -<span>8</span> Following
+          -<span>{following}</span> Following
         </Label>
       </div>
       <Label className="label">
         <i className="icon-location" />
-        Ciudad de México
+        {location}
       </Label>
       <Label className="label">
         <i className="icon-link" />
-        https://leonidasesteban.com
+        {blog}
       </Label>
       <Label className="label">
         <i className="icon-twitter" />
-        @LeonidasEsteban
+        {twitter_username}
       </Label>
     </div>
   );

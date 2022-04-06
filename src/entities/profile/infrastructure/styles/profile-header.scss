@@ -3,6 +3,7 @@
   grid-template-areas: "header" "descriptions" "actions";
   gap: 1.5rem;
   margin-block-end: 3rem;
+  block-size: fit-content;
 
   &-header {
     grid-area: header;
