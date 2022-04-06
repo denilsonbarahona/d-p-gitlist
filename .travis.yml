@@ -11,6 +11,8 @@ script:
   - yarn build
 deploy:
   provider: firebase
+  on:
+    branch: main
   edge: true
   skip_cleanup: true
   token:
