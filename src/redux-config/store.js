@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import services from "../entities/API";
 import reducers from "./reducers";
-import thunk from "redux-thunk";
 
 const withArgument = thunk.withExtraArgument({ services });
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

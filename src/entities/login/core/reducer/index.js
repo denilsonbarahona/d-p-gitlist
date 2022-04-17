@@ -1,11 +1,11 @@
-import { SAVE_SESSION, SIGN_OUT } from "../types";
 import { getSessionStorage } from "@shared/utils/sessionStorage";
+import { SAVE_SESSION, SIGN_OUT } from "../types";
 
 const session = getSessionStorage("login");
 
 const initialState = {
   user: { ...session },
-  goToHome: session ? true : false,
+  goToHome: !!session,
 };
 
 const LoginReducer = (state = initialState, actions) => {

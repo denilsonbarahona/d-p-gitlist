@@ -4,7 +4,7 @@ export const getRepos = (url) => {
       return response.json();
     })
     .then((data) => {
-      return { data: data, error: false };
+      return { data, error: false };
     })
     .catch((e) => {
       return { message: e.message, error: true };

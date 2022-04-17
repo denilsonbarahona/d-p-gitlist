@@ -6,9 +6,9 @@ export const searchUser = (userName) => {
       return response.json();
     })
     .then((data) => {
-      if (data["message"] === "Not Found")
+      if (data.message === "Not Found")
         return { message: "Repository Not Found", error: true };
-      else return { ...data, error: false };
+      return { ...data, error: false };
     })
     .catch((e) => {
       return { message: e.message, error: true };
