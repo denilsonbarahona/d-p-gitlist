@@ -20,7 +20,7 @@ const HandleKeyPress = function (event) {
     case "ArrowDown":
       ++itemIndex;
       moveIndex();
-      return;
+      
   }
 };
 

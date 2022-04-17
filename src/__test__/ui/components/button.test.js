@@ -1,7 +1,7 @@
 import React from 'react'
 import {mount} from "enzyme"
-import Button from '../../../shared/components/button'
 import {create} from 'react-test-renderer'
+import Button from '../../../shared/components/button'
 
 
 describe('button',()=>{
