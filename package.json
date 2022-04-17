@@ -4,7 +4,7 @@
   "description": "React, Redux, JS, Jest",
   "main": "index.js",
   "scripts": {
-    "build": "node ./scripts/create_redirects.js && webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js && node ./scripts/create_redirects.js ",
     "start": "webpack serve --config webpack.config.dev.js",
     "lint": "eslint src/ --fix",
     "format": "prettier --write \"src/\"",
